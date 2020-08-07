@@ -9,7 +9,7 @@ from extractor import Extractor
 baiduUrl = "http://www.baidu.com"
 sougouUrl = "http://www.sogou.com"
 baiduUrl = "http://m.baidu.com"
-
+fopath = "E:\\BaiduArrange-master\\txt\\"
 # 取出一个网页的html的方法封装
 def get_html(url,index):
     header = [{
@@ -140,7 +140,7 @@ def writetext_souguo(page):
 def writfile_baidu(a_url):
   u = Extractor.get_url(a_url,'baidu')
   print(u)
-  fo = open("E:\\BaiduArrange-master\\txt\\"+u+".txt", "w+",encoding='utf-8-sig')
+  fo = open(fopath+u+".txt", "w+",encoding='utf-8-sig')
               								 
   ext = Extractor(url=a_url,blockSize=5, image=False)
   #print(ext.getContext())
@@ -154,7 +154,7 @@ def writfile_baidu(a_url):
 def writfile_sougou(a_url):
   u = Extractor.get_url(a_url,"sougou")
   print(u)
-  fo = open("E:\\BaiduArrange-master\\txt\\"+u+".txt", "w+",encoding='utf-8-sig')
+  fo = open(fopath+u+".txt", "w+",encoding='utf-8-sig')
   #print(Extractor.geta_url_sougou(a_url))   
   ext = Extractor(url=Extractor.geta_url_sougou(a_url),blockSize=5, image=False)
   #print(ext.getContext())
